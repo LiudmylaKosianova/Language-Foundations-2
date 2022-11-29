@@ -1,3 +1,55 @@
+/*You are still conducting linguistic research! This time, you'd like to write a program to find out how many letters occur 
+multiple times in a given word. Your program should read a word from the input and then sort the letters of the word alphabetically 
+(by their ASCII codes). Next, your program should iterate through the letters of the word and compare each letter 
+with the one following it. If these equal each other, you increase a counter by 1, making sure to then skip ahead far enough 
+so that letters that occur more than twice are not counted again. You may assume that the word you read from the input has 
+no more than 50 letters, and that the word is all lowercase.*/
+
+#include <stdio.h>
+int main (void)
+{
+    char word[50];
+    char letter;
+    int j=0;
+    int i=0;
+    int count=0;
+    int swap=0;
+    int length=0; //because I want to know how long the given word is
+    scanf("%s", word);
+    
+    while (word[i]!='\0'){
+        length ++;
+        i++;
+    }
+    //hopefully it will sort the letters in a given word
+    for (j=0; j<length-1; j++) {
+        for (i=0; i<length-1; i++) {
+            if (word[i] > word[i+1]) {
+                swap = word[i];
+                word[i] = word[i+1];
+                word[i+1] = swap;
+            }
+        }
+    }
+   //now let's hunt for repeated letters
+    
+    for (i=0;i<length-1;i++)
+    {
+        if(word[i]==word[i+1])
+        {
+          count++;
+          letter=word[i];
+          while(word[i+1]==letter){
+              i++;
+          }
+        }
+      
+    }
+    printf("%d", count);  
+    return 0;
+}
+
+
 /*You are conducting a linguistic study and are interested in finding words that contain the letter 't' or 'T' in the first half of the word
 (including the middle letter if there is one). Specifically, if the first half of the word does contain a 't' or a 'T', your program should output
 a 1. If the first half does not contain the letter 't' or 'T', but the second half does, then your program should output a 2. 
