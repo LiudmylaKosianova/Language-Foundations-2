@@ -1,7 +1,9 @@
-C Programming with Linux Specialization on Coursera
+This repository contains tasks completed throughout the course
 
-Course name: 
-C Programming Language Foundations-2
-(course 2 out of 7)
+course name: Language Foundations-2 
 
-The files contain practical tasks that I completed learning the course
+course 2 out of 7
+
+C Programming with Linux Specialization
+
+offered on Coursera by Dartmouth College & Institut Mines-Télécom
